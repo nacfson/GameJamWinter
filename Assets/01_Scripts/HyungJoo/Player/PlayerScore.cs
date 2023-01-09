@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class PlayerScore : MonoBehaviour
 {
-    public Transform originTransform;
+    public Vector2 originTransform;
     void Awake()
     {
-        originTransform  = transform;
+        originTransform  = transform.position;
     }
-
+    void Update()
+    {
+        Debug.Log(transform.position.y - originTransform.y);
+    }
     public int CheckHeight()
     {
-        return (int)(transform.position.y - originTransform.position.y);
+        return (int)(transform.position.y - originTransform.y);
     }
 }
