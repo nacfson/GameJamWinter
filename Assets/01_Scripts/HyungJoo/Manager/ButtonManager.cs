@@ -9,7 +9,7 @@ public class ButtonManager : MonoBehaviour
 
 
     public float xPower = 0.5f;
-    public float yPower = 1f;
+    public float yPower = 5.0f;
 
     private void Awake() 
     {

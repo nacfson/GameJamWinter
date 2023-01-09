@@ -34,13 +34,14 @@ public class PlayerController : MonoBehaviour
     }
     public bool MinusJumpCount(int plus)
     {
+        _jumpCount += plus;
+
         if(_jumpCount < 0)
         {
             return false;
         }
         else
         {
-            _jumpCount += plus;
             return true;
         }
     }
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if(MinusJumpCount(-1))
         {
-            rigid.velocity = Vector2.zero;
+            rigid.velocity = new Vector2(0,rigid.velocity.y/3);
             rigid.AddForce(dir * _jumpPower * 200);
         }
         Debug.Log("Jump");
