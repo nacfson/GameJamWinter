@@ -21,11 +21,9 @@ public class ButtonManager : MonoBehaviour
         Debug.Log("OnButton");
         Vector2 dir = new Vector2(xPower,yPower);
         playerController.WallJump(dir);
-        Debug.Log(xPower);
 
     }
-    private void Update() {
-    }
+
 
 
 }
