@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/00_Scenes/HyungJoo/MainMenu.unity
+    guid: c955abb124f3dc64b9b77bdfd5a3b136
+  - enabled: 1
     path: Assets/00_Scenes/HyungJoo/PlayerTest.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/00_Scenes/HyungJoo/OptionScene.unity
+    guid: a31fdae0348d2614eb59b06dbc62d787
   m_configObjects: {}
