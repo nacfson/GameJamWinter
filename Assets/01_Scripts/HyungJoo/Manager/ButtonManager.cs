@@ -8,13 +8,13 @@ public class ButtonManager : MonoBehaviour
     public PlayerController playerController;
 
 
-    public float xPower = 0.5f;
-    public float yPower = 5.0f;
+    public float xPower = 0.4f;
+    public float yPower = 2.0f;
 
     private void Awake() 
     {
         playerController = FindObjectOfType<PlayerController>();
-        xPower = 0.5f;
+        xPower = 0.4f;
     }
     public void OnButton()
     {

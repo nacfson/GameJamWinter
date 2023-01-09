@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     {
         if(MinusJumpCount(-1))
         {
-            rigid.velocity = new Vector2(0,rigid.velocity.y/3);
+            rigid.velocity = new Vector2(0,0);
             rigid.AddForce(dir * _jumpPower * 200);
         }
         Debug.Log("Jump");
