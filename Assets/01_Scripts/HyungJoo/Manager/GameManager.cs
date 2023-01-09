@@ -44,5 +44,6 @@ public class GameManager : MonoBehaviour
     public void PlayPlayerDead()
     {
         Debug.Log("PlayerDead");
+        canMove = false;
     }
 }
