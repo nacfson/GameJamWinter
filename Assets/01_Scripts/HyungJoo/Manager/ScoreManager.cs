@@ -13,6 +13,7 @@ public class ScoreManager : MonoBehaviour
     void Awake()
     {
         StartCoroutine(SetTextCor());
+        GameManager.Instance.PlayerDead += SetScore;
     }
     IEnumerator SetTextCor()
     {
@@ -20,8 +21,16 @@ public class ScoreManager : MonoBehaviour
         while(true)
         {
             _currentText.text = $"{GameManager.Instance.playerScore.CheckHeight()}M";
-            //_bestText.text = $"BEST {PlayerPrefs.GetInt("BESTSCORE")}M";   
+            _bestText.text = $"BEST {PlayerPrefs.GetInt("BESTSCORE")}M";   
             yield return null;
+        }
+    }
+
+    public void SetScore()
+    {
+        if(GameManager.Instance.playerScore.CheckHeight() > PlayerPrefs.GetInt("BESTSCORE"))
+        {
+            PlayerPrefs.SetInt("BESTSCORE",GameManager.Instance.playerScore.CheckHeight());
         }
     }
 
