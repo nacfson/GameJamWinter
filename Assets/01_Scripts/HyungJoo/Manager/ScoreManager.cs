@@ -21,7 +21,8 @@ public class ScoreManager : MonoBehaviour
         while(true)
         {
             _currentText.text = $"{GameManager.Instance.playerScore.CheckHeight()}M";
-            _bestText.text = $"BEST {PlayerPrefs.GetInt("BESTSCORE")}M";   
+            _bestText.text = $"BEST {PlayerPrefs.GetInt("BESTSCORE")}M";
+            SetScore();
             yield return null;
         }
     }
