@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/HyungJoo/OptionScene.unity
     guid: a31fdae0348d2614eb59b06dbc62d787
+  - enabled: 1
+    path: Assets/00_Scenes/HyungJoo/Score.unity
+    guid: 0f1e85cf0dc3f724ba59d956920d2a11
   m_configObjects: {}
