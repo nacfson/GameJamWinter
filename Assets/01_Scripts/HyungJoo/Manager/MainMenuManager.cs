@@ -23,14 +23,10 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    public void OnLoadUIScenes()
-    {
-        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
-        SceneManager.LoadScene("Score",LoadSceneMode.Additive);
-    }
+
     public void OnStart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.Instance.LoadPlayScene();
     }
 
     public void OnExit()

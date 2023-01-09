@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
@@ -45,5 +46,15 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("PlayerDead");
         canMove = false;
+    }
+    public void LoadPlayScene()
+    {
+        SceneManager.LoadScene("PlayScene");
+        OnLoadUIScenes();
+    }
+        public void OnLoadUIScenes()
+    {
+        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
+        SceneManager.LoadScene("Score",LoadSceneMode.Additive);
     }
 }

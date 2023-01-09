@@ -29,8 +29,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         _jumpCount = 1;
-        anim.SetBool("Die",false);
-        GameManager.Instance.PlayerDead += DeadAnim;
+        GameManager.Instance.PlayerDead += DieProcess;
 
     }
 
@@ -82,15 +81,10 @@ public class PlayerController : MonoBehaviour
         
         Debug.Log("Jump");
     }
-    public void DeadAnim()
-    {
-        anim.SetBool("Die",true);
-        Debug.Log("Dieeeeee");
-        DieProcess();
-    }
 
     public void DieProcess()
     {
+        GameManager.Instance.PlayerDead -= DieProcess;
         Destroy(gameObject);
     }
 }
