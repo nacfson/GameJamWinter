@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public bool isRightWall;
     private int _jumpCount;
     public UnityEvent Jumped;
-    
+
+    public Vector2 moveVec;
     private void Awake() 
     {
         
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        Vector2 moveVec = new Vector2(x *_xSpeed ,rigid.velocity.y);
+         moveVec = new Vector2(x *_xSpeed ,rigid.velocity.y);
         rigid.velocity = moveVec;
         
     }
