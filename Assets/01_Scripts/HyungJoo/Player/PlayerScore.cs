@@ -9,10 +9,6 @@ public class PlayerScore : MonoBehaviour
     {
         originTransform  = transform.position;
     }
-    void Update()
-    {
-        Debug.Log(transform.position.y - originTransform.y);
-    }
     public int CheckHeight()
     {
         return (int)(transform.position.y - originTransform.y);

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public UnityAction PlayerDead;
+    public bool canMove;
     public ScoreManager _scoreManager;
 
     public PlayerScore _playerScore;
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         PlayerDead += PlayPlayerDead;
+        canMove = false;
     }
 
     public void PlayPlayerDead()

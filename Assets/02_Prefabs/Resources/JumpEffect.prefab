@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1967835574231978633}
   - component: {fileID: 9053974128964561379}
   m_Layer: 0
-  m_Name: FX001_01
+  m_Name: JumpEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
