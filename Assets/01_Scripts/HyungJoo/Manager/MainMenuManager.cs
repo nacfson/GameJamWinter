@@ -26,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
     public void OnLoadUIScenes()
     {
         SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene("Score",LoadSceneMode.Additive);
     }
     public void OnStart()
     {
