@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
+    Animator anim;
     public PlayerController playerController;
     public ButtonManager buttonManager;
+    SpriteRenderer sp;
     void Awake()
     {
+        sp = GetComponent<SpriteRenderer>();
+            
+        anim = GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
         buttonManager = FindObjectOfType<ButtonManager>();
     }
     private void OnCollisionStay2D(Collision2D other) {
         if(other.gameObject.CompareTag("LeftWall"))
         {
+            sp.flipX = false;
+            anim.SetBool("Pwall", true);
             playerController.isWall = true;
             playerController.JumpCount  = 2;
             playerController.isLeftWall = true;
@@ -22,13 +29,17 @@ public class PlayerCollision : MonoBehaviour
         }
         if(other.gameObject.CompareTag("RightWall"))
         {
+            sp.flipX = true;
+            anim.SetBool("Pwall", true);
             playerController.isWall = true;
             playerController.JumpCount  = 2;
             playerController.isRightWall = true;
             playerController.rigid.gravityScale = 0.2f;
             buttonManager.xPower = -0.4f;
         }
+        
     }
+    
     private void OnCollisionExit2D(Collision2D other) {
         if(other.gameObject.CompareTag("LeftWall"))
         {
