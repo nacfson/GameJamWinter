@@ -34,11 +34,15 @@ public class PlayerCollision : MonoBehaviour
         {
             playerController.isWall = false;
             playerController.rigid.gravityScale = 1f;
+            playerController.JumpCount--;
+
         }
         if(other.gameObject.CompareTag("RightWall"))
         {
             playerController.isWall = false;
             playerController.rigid.gravityScale = 1f;
+            playerController.JumpCount--;
+
         }
     }
 }

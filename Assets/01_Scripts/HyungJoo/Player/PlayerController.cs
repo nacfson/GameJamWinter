@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class PlayerController : MonoBehaviour
 {
     public int JumpCount
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public bool isLeftWall;
     public bool isRightWall;
     private int _jumpCount;
+    public UnityEvent Jumped;
     private void Awake() 
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             rigid.velocity = new Vector2(0,0);
             rigid.AddForce(dir * _jumpPower * 200);
+            Jumped?.Invoke();
         }
         Debug.Log("Jump");
     }
