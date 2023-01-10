@@ -13,27 +13,29 @@ public class EndManager : MonoBehaviour
 
     
     private void Awake() {
+        GameManager.Instance.PlayerDead -= PanelDown;
         _destination = GameObject.Find("Destination");
         _currentScore = transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
         _bestScore = transform.Find("BestScore").GetComponent<TextMeshProUGUI>();
-        _endPanel = this.gameObject;
         GameManager.Instance.PlayerDead += PanelDown;
 
     }
     public void PanelDown()
     {
+        _endPanel = this.gameObject;
         _endPanel.transform.DOLocalMoveY(-1f,0.4f).SetEase(Ease.Linear);
         _currentScore.text = $"{ScoreManager.score}M";
         _bestScore.text = $"BEST : {PlayerPrefs.GetInt("BESTSCORE")}M";
-        GameManager.Instance.PlayerDead -= PanelDown;
     }
     public void OnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.GameStart?.Invoke();
     }
     public void Restart()
     {
         GameManager.Instance.LoadPlayScene();
+        GameManager.Instance.GameStart?.Invoke();
     }
     public void Quit()
     {

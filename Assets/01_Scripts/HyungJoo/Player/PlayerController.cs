@@ -23,9 +23,9 @@ public class PlayerController : MonoBehaviour
     private int _jumpCount;
     public UnityEvent Jumped;
     
-    private void Awake() 
+    private void Start() 
     {
-        
+        GameManager.Instance.PlayerDead -= DieProcess;
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         _jumpCount = 1;
@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
     public void DieProcess()
     {
-        GameManager.Instance.PlayerDead -= DieProcess;
-        Destroy(gameObject);
+        GameManager.Instance.canSpawn = false;
+        gameObject.SetActive(false);
     }
 }

@@ -60,6 +60,8 @@ public class OptionSceneManager : MonoBehaviour
     public void OnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.GameStart?.Invoke();
+
     }
 
     public void OnExit()

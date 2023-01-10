@@ -20,12 +20,16 @@ public class TrashSpawner : MonoBehaviour
     }
     IEnumerator SpawnTrashCor()
     {
-        
-        while(GameManager.Instance.canSpawn)
+        while(true)
         {
-            Debug.Log("Spawn");
-            SpawnObject();
-            yield return new WaitForSeconds(spawnDelay);
+
+            if(GameManager.Instance.canSpawn)
+            {
+                Debug.Log("Spawn");
+                SpawnObject();
+                yield return new WaitForSeconds(spawnDelay);
+            }
+            yield return null;
         }
     }
     public void SpawnObject()

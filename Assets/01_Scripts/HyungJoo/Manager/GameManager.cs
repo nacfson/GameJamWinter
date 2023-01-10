@@ -40,13 +40,16 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        PlayerDead -= PlayerDead;
         PlayerDead += PlayPlayerDead;
+        GameStart = Destruction;
         canMove = false;
     }
 
     public void PlayPlayerDead()
     {
         Debug.Log("PlayerDead");
+        Handheld.Vibrate();
         canMove = false;
     }
     public void LoadPlayScene()
@@ -54,9 +57,13 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("PlayScene");
         OnLoadUIScenes();
     }
-        public void OnLoadUIScenes()
+    public void OnLoadUIScenes()
     {
         SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
         SceneManager.LoadScene("Score",LoadSceneMode.Additive);
+    }
+    public void Destruction()
+    {
+        Destroy(gameObject);
     }
 }
