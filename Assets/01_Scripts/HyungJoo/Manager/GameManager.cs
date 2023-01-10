@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        PlayerDead -= PlayerDead;
+        PlayerDead -= PlayPlayerDead;
         PlayerDead += PlayPlayerDead;
         GameStart = Destruction;
         canMove = false;
