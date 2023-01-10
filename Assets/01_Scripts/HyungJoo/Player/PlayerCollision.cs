@@ -39,12 +39,25 @@ public class PlayerCollision : MonoBehaviour
             playerController.JumpCount  = 2;
             playerController.isRightWall = true;
             playerController.rigid.gravityScale = 0f;
+
             buttonManager.xPower = -0.4f;
         }
         
     }
-    private void OnTriggerStay2D(Collider2D other) {
 
+    
+    private void OnCollisionEnter2D(Collision2D other) {
+                if(other.gameObject.CompareTag("LeftWall")){
+                    Debug.Log("LeftWall");
+            playerController.rigid.velocity = Vector3.zero;
+        }
+        if(other.gameObject.CompareTag("RightWall")){
+
+                    Debug.Log("LeftWall");
+
+            playerController.rigid.velocity = Vector3.zero;
+
+        }
     }
     
     private void OnCollisionExit2D(Collision2D other) {
