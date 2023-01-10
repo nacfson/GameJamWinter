@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - LeftWall
   - RightWall
+  - Area
+  - Ground
   layers:
   - Default
   - TransparentFX
