@@ -18,13 +18,13 @@ public class Wall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(background.Rwall > 2)
+        if(background.Rwall > 3)
         {
             subWall.SetActive(true);
-            background.Rwall = 0;
+            background.Rwall-=3;
             Debug.Log("µÅ");
         }
-        else if(background.Rwall == 1)
+        else if(background.Rwall <= 1)
         {
             subWall.SetActive(false);
         }

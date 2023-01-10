@@ -133,9 +133,10 @@ GameObject:
   m_Component:
   - component: {fileID: 284007861}
   - component: {fileID: 284007862}
+  - component: {fileID: 284007863}
   m_Layer: 0
   m_Name: left
-  m_TagString: LeftWall
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,6 +181,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4871602, y: 2.9898179}
   m_EdgeRadius: 0
+--- !u!50 &284007863
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284007860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &300830813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,9 +1201,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1073088586}
   - component: {fileID: 1073088587}
+  - component: {fileID: 1073088588}
   m_Layer: 0
   m_Name: Right
-  m_TagString: RightWall
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1226,6 +1249,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48935616, y: 2.9898179}
   m_EdgeRadius: 0
+--- !u!50 &1073088588
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073088585}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &1094322284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1887,6 @@ GameObject:
   m_Component:
   - component: {fileID: 924758589}
   - component: {fileID: 1169194569}
-  - component: {fileID: 1169194568}
   m_Layer: 0
   m_Name: subWall2
   m_TagString: Untagged
@@ -1851,27 +1894,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!50 &1169194568
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1169194567}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!212 &1169194569
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2798,8 +2820,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2b543551763a047a45abcc784f5258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 0
-  canSpawn: 0
   _scoreManager: {fileID: 0}
   _playerScore: {fileID: 0}
 --- !u!4 &1720781278
@@ -17490,7 +17510,7 @@ GameObject:
   - component: {fileID: 4938055955897828539}
   m_Layer: 0
   m_Name: left
-  m_TagString: LeftWall
+  m_TagString: RightWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17651,7 +17671,7 @@ GameObject:
   - component: {fileID: 8471149227346129691}
   m_Layer: 0
   m_Name: Right
-  m_TagString: RightWall
+  m_TagString: LeftWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
