@@ -10,7 +10,6 @@ public class Background : MonoBehaviour
     public float Rwall;
     private void Start()
     {
-        Rwall+=2;
         player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
@@ -21,7 +20,7 @@ public class Background : MonoBehaviour
         Vector2 playerPos = player.transform.position;
         Vector2 myPos = transform.position;
         Debug.Log(Rwall);
-        Rwall++;
+        Rwall+= 2;
         float diffx = Mathf.Abs(playerPos.x - myPos.x);
         float diffy = Mathf.Abs(playerPos.y - myPos.y);
 
