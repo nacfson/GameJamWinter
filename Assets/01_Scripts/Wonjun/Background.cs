@@ -36,8 +36,9 @@ public class Background : MonoBehaviour
                     }*/
                     if (diffx < diffy)
                     {
-                        transform.Translate(Vector2.up * diry * 25);
+                        transform.Translate(Vector2.up * diry * 20f);
                     }
+                    
                 }
                 break;
         }
