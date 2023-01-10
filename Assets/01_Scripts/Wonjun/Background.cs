@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Background : MonoBehaviour
 {
     public PlayerController player;
+    public float Rwall;
     private void Start()
     {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -37,6 +40,7 @@ public class Background : MonoBehaviour
                     if (diffx < diffy)
                     {
                         transform.Translate(Vector2.up * diry * 26f);
+                        Rwall++;
                     }
                     
                 }
