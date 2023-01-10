@@ -21,25 +21,18 @@ public class ButtonManager : MonoBehaviour
         playerController = FindObjectOfType<PlayerController>();
         startZone = FindObjectOfType<StartZoneCollision>().gameObject;
         xPower = 0.4f;
-        GameManager.Instance.canMove = false;
         _tapPanel.SetActive(true);
         startZone.SetActive(true);
     }
 
     public void OnButton()
     {
-
-
             GameManager.Instance.canMove = true;
+            GameManager.Instance.canSpawn = true;
+
         _tapPanel.SetActive(false);
         startZone.SetActive(false);
-            Vector2 dir = new Vector2(xPower,yPower);
-            playerController.WallJump(dir);
-        
-
-
+        Vector2 dir = new Vector2(xPower,yPower);
+        playerController.WallJump(dir);
     }
-
-
-
 }

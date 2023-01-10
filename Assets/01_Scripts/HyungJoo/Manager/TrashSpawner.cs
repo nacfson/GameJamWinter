@@ -25,7 +25,7 @@ public class TrashSpawner : MonoBehaviour
     {
         while(true)
         {
-
+            //Debug.Log(GameManager.Instance.canSpawn);
             if(GameManager.Instance.canSpawn)
             {
                 Debug.Log("Spawn");

@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
+using TMPro;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _exitPanel;
+    [SerializeField]
+    private TextMeshProUGUI _bestScoreText;
+    [SerializeField]
+    private GameObject _scorePanel;
 
     public bool onExitPanel;
+    public bool onScorePanel;
     void Awake()
     {
         _exitPanel.SetActive(false);
         onExitPanel = false;
+        _scorePanel.SetActive(false);
+        onScorePanel = false;
 
     }
     void Update()
@@ -50,6 +55,21 @@ public class MainMenuManager : MonoBehaviour
         {
             _exitPanel.SetActive(true);
             onExitPanel = true;
+        }
+    }
+
+    public void ScorePanel()
+    {
+        if(onScorePanel)
+        {
+            _scorePanel.SetActive(false);
+            onScorePanel = false;
+        }
+        else
+        {
+            _scorePanel.SetActive(true);
+            onScorePanel = true;
+            _bestScoreText.text = $"BEST SCORE\n{PlayerPrefs.GetInt("BESTSCORE")}M";
         }
     }
 }
