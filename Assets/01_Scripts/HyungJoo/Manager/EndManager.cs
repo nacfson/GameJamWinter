@@ -13,11 +13,10 @@ public class EndManager : MonoBehaviour
 
     
     private void Awake() {
-        GameManager.Instance.PlayerDead -= PanelDown;
         _destination = GameObject.Find("Destination");
         _currentScore = transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
         _bestScore = transform.Find("BestScore").GetComponent<TextMeshProUGUI>();
-        GameManager.Instance.PlayerDead += PanelDown;
+        GameManager.Instance.PlayerAnimationEnd = PanelDown;
 
     }
     public void PanelDown()
