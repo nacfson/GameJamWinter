@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     }
     public void WallJump(Vector2 dir)
     {
-        
+        GameManager.Instance.canSpawn = true;
         if(MinusJumpCount(-1))
         {
             anim.SetBool("Pwall",false);

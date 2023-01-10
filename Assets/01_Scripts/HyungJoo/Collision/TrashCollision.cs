@@ -6,6 +6,15 @@ public class TrashCollision : MonoBehaviour
 {
     public float speed = 0.2f;
 
+    void Awake()
+    {
+        Invoke("Destruction",30f);
+    }
+    public void Destruction()
+    {
+        Destroy(gameObject);
+    }
+
     private void FixedUpdate() {
         if(GameManager.Instance.canMove)
         {

@@ -16,13 +16,20 @@ public class ButtonManager : MonoBehaviour
         deadZoneCollision = FindObjectOfType<DeadZoneCollision>();
         playerController = FindObjectOfType<PlayerController>();
         xPower = 0.4f;
+        GameManager.Instance.canMove = false;
     }
+
     public void OnButton()
     {
-        Debug.Log("OnButton");
-        GameManager.Instance.canMove = true;
-        Vector2 dir = new Vector2(xPower,yPower);
-        playerController.WallJump(dir);
+
+
+            GameManager.Instance.canMove = true;
+
+
+            Vector2 dir = new Vector2(xPower,yPower);
+            playerController.WallJump(dir);
+        
+
 
     }
 

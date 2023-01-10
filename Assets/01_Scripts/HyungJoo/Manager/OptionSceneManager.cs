@@ -26,7 +26,6 @@ public class OptionSceneManager : MonoBehaviour
     private void Awake() {
         onMainPanel =false;
         Time.timeScale = 1f;
-        GameManager.Instance.canMove = false;
         _mainPanel.SetActive(false);
         _optionButton.SetActive(true);
     }
