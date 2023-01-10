@@ -21,12 +21,16 @@ public class Wall : MonoBehaviour
         if(background.Rwall > 3)
         {
             subWall.SetActive(true);
-            background.Rwall-=3;
+            background.Rwall-=1;
             Debug.Log("µÅ");
         }
         else if(background.Rwall <= 1)
         {
             subWall.SetActive(false);
+        }
+        else if(background.Rwall >= 8)
+        {
+            background.Rwall = 0;
         }
         
     }
