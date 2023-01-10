@@ -607,7 +607,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   deadZoneCollision: {fileID: 0}
-  _tapPanel: {fileID: 0}
+  _tapPanel: {fileID: 8591313667982980123}
   xPower: 0.5
   yPower: 1
   startZone: {fileID: 0}
@@ -934,6 +934,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  moveVec: {x: 0, y: 0}
 --- !u!114 &8711851054411075241
 MonoBehaviour:
   m_ObjectHideFlags: 0
