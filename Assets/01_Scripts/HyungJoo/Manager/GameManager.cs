@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("PlayerDead");
         Handheld.Vibrate();
         canMove = false;
+        canSpawn = false;
     }
     public void LoadPlayScene()
     {
