@@ -10,7 +10,7 @@ public class DeadZoneCollision : MonoBehaviour
         canMove = false;
     }
     private void FixedUpdate() {
-        if(GameManager.Instance.canMove)
+        if(GameManager.canMove)
         {
             transform.position += Vector3.up * upSpeed * 0.08f;
         }

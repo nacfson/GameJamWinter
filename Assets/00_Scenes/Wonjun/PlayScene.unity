@@ -17452,6 +17452,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 37373628704515990, guid: 49b3bee2010e51c42bd40463582c1579, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 37373628704516072, guid: 49b3bee2010e51c42bd40463582c1579, type: 3}
       propertyPath: m_Name
       value: DeadZone

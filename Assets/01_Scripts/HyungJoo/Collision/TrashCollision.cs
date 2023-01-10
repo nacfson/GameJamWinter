@@ -17,7 +17,7 @@ public class TrashCollision : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if(GameManager.Instance.canMove)
+        if(GameManager.canMove)
         {
             transform.position -= new Vector3(0,trashSO.fallSpeed * 0.05f);
             transform.Rotate(new Vector3(0,0,trashSO.rotationSpeed * 10f));
