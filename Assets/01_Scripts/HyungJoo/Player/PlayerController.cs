@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
     }
     public void WallJump(Vector2 dir)
     {
-        
         if(MinusJumpCount(-1))
         {
             anim.SetBool("Pwall",false);

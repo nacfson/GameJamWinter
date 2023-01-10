@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
-<<<<<<< HEAD
-=======
     public UnityAction PlayerDead;
+    public UnityAction GameStart;
     public bool canMove;
+    public bool canSpawn;
     public ScoreManager _scoreManager;
 
     public PlayerScore _playerScore;
@@ -28,7 +29,6 @@ public class GameManager : MonoBehaviour
             return _scoreManager;
         }
     }
->>>>>>> main
     private void Awake() 
     {
         if(Instance == null)
@@ -40,12 +40,30 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-<<<<<<< HEAD
-=======
+        PlayerDead -= PlayerDead;
         PlayerDead += PlayPlayerDead;
+        GameStart = Destruction;
         canMove = false;
     }
->>>>>>> main
 
+    public void PlayPlayerDead()
+    {
+        Debug.Log("PlayerDead");
+        Handheld.Vibrate();
+        canMove = false;
+    }
+    public void LoadPlayScene()
+    {
+        SceneManager.LoadScene("PlayScene");
+        OnLoadUIScenes();
+    }
+    public void OnLoadUIScenes()
+    {
+        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
+        SceneManager.LoadScene("Score",LoadSceneMode.Additive);
+    }
+    public void Destruction()
+    {
+        Destroy(gameObject);
     }
 }
