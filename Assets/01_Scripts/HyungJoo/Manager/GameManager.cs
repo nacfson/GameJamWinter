@@ -7,10 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
     public UnityAction PlayerDead;
+    public UnityAction PlayerDeadPlayer;
+    public UnityAction PlayerDeadEnd;
+    public UnityAction PlayerDeadScore;
     public UnityAction GameStart;
     public UnityAction PlayerAnimationEnd;
-    public bool canMove;
-    public bool canSpawn;
+    public static bool canMove;
+    public static bool canSpawn;
     public ScoreManager _scoreManager;
 
     public PlayerScore _playerScore;
@@ -41,13 +44,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        PlayerDead -= PlayPlayerDead;
-        PlayerDead += PlayPlayerDead;
-        GameStart = Destruction;
         canMove = false;
     }
 
-    public void PlayPlayerDead()
+
+    public static void PlayPlayerDead()
     {
         Debug.Log("PlayerDead");
         Handheld.Vibrate();
@@ -64,8 +65,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
         SceneManager.LoadScene("Score",LoadSceneMode.Additive);
     }
-    public void Destruction()
-    {
-        Destroy(gameObject);
-    }
+
 }

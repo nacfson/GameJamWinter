@@ -27,8 +27,8 @@ public class ButtonManager : MonoBehaviour
 
     public void OnButton()
     {
-            GameManager.Instance.canMove = true;
-            GameManager.Instance.canSpawn = true;
+            GameManager.canMove = true;
+            GameManager.canSpawn = true;
 
         _tapPanel.SetActive(false);
         startZone.SetActive(false);

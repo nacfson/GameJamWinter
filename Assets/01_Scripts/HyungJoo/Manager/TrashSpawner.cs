@@ -18,7 +18,7 @@ public class TrashSpawner : MonoBehaviour
     {
         trashSpawner = this.transform;
         playerTransform = FindObjectOfType<PlayerController>().transform;
-        GameManager.Instance.canSpawn = false;
+        GameManager.canSpawn = false;
         StartCoroutine(SpawnTrashCor());
     }
     IEnumerator SpawnTrashCor()
@@ -26,7 +26,7 @@ public class TrashSpawner : MonoBehaviour
         while(true)
         {
             //Debug.Log(GameManager.Instance.canSpawn);
-            if(GameManager.Instance.canSpawn)
+            if(GameManager.canSpawn)
             {
                 Debug.Log("Spawn");
                 SpawnObject();

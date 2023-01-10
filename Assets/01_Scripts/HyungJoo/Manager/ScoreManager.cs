@@ -15,8 +15,11 @@ public class ScoreManager : MonoBehaviour
     void Awake()
     {
         StartCoroutine(SetTextCor());
-        GameManager.Instance.PlayerDead += SetScore;
         score  = 0;
+    }
+    public void Start()
+    {
+        //GameManager.Instance.PlayerDead += SetScore;
     }
     IEnumerator SetTextCor()
     {

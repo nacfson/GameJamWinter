@@ -16,15 +16,20 @@ public class EndManager : MonoBehaviour
         _destination = GameObject.Find("Destination");
         _currentScore = transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
         _bestScore = transform.Find("BestScore").GetComponent<TextMeshProUGUI>();
-        GameManager.Instance.PlayerAnimationEnd = PanelDown;
 
+    }
+    void Start()
+    {
+        GameManager.Instance.PlayerDead += PanelDown;
     }
     public void PanelDown()
     {
+        GameManager.Instance.PlayerDead -= PanelDown;
         _endPanel = this.gameObject;
         _endPanel.transform.DOLocalMoveY(-1f,0.4f).SetEase(Ease.Linear);
         _currentScore.text = $"{ScoreManager.score}M";
         _bestScore.text = $"BEST : {PlayerPrefs.GetInt("BESTSCORE")}M";
+
     }
     public void OnMainMenu()
     {
