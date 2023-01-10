@@ -400,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8711851053070481233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.469256, y: 0.38579845, z: -10}
+  m_LocalPosition: {x: 0, y: 2.88, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8711851054636841804}
@@ -607,10 +607,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
   deadZoneCollision: {fileID: 0}
-  _tapPanel: {fileID: 0}
   xPower: 0.5
   yPower: 1
-  startZone: {fileID: 0}
 --- !u!1 &8711851053548034478
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,8 +972,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.10321474}
-  m_Size: {x: 0.5, y: 0.5021405}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
   m_Direction: 0
 --- !u!212 &8711851054411075243
 SpriteRenderer:
