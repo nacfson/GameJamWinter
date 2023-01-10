@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
 
     public void Destruction()
     {
+        GameManager.Instance.PlayerAnimationEnd?.Invoke();
         gameObject.SetActive(false);
     }
 }

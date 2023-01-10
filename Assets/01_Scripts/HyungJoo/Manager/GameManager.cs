@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance = null;
     public UnityAction PlayerDead;
     public UnityAction GameStart;
+    public UnityAction PlayerAnimationEnd;
     public bool canMove;
     public bool canSpawn;
     public ScoreManager _scoreManager;
