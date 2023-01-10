@@ -22,7 +22,7 @@ public class EndManager : MonoBehaviour
     }
     public void PanelDown()
     {
-        _endPanel.transform.DOLocalMoveY(-1f,1f);
+        _endPanel.transform.DOLocalMoveY(-1f,1f).SetEase(Ease.Linear);
         _currentScore.text = $"{ScoreManager.score}M";
         _bestScore.text = $"BEST : {PlayerPrefs.GetInt("BESTSCORE")}M";
         GameManager.Instance.PlayerDead -= PanelDown;

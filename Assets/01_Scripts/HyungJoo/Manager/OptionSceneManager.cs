@@ -1,3 +1,4 @@
+using System.Diagnostics.SymbolStore;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class OptionSceneManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject _mainPanel;
+    [SerializeField]
+    private GameObject _optionButton;
     
     public AudioMixer audioMixer;
 
@@ -25,6 +28,7 @@ public class OptionSceneManager : MonoBehaviour
         Time.timeScale = 1f;
         GameManager.Instance.canMove = false;
         _mainPanel.SetActive(false);
+        _optionButton.SetActive(true);
     }
     void Update()
     {
@@ -39,12 +43,16 @@ public class OptionSceneManager : MonoBehaviour
         {
             _mainPanel.SetActive(false);
             Time.timeScale = 1f;
+        _optionButton.SetActive(true);
+
             onMainPanel = false;
         }
         else
         {
             _mainPanel.SetActive(true); 
             onMainPanel = true;
+        _optionButton.SetActive(false);
+
             Time.timeScale = 0f;
 
         }
@@ -53,5 +61,15 @@ public class OptionSceneManager : MonoBehaviour
     public void OnMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnExit()
+    {
+        Application.Quit();
+    }
+
+    public void OnSns()
+    {
+        Application.OpenURL("https://github.com/nacfson/GameJamWinter");
     }
 }
