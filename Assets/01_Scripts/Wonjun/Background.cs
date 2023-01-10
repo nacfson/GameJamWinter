@@ -6,6 +6,7 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
     public PlayerController player;
+    public float Rwall;
     private void Start()
     {
     }
@@ -37,6 +38,7 @@ public class Background : MonoBehaviour
                     if (diffx < diffy)
                     {
                         transform.Translate(Vector2.up * diry * 26f);
+                        Rwall++;
                     }
                     
                 }
