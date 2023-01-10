@@ -1,8 +1,6 @@
-using System.ComponentModel;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections.Generic;
 public class TrashSpawner : MonoBehaviour
 {
     [SerializeField]
@@ -10,6 +8,11 @@ public class TrashSpawner : MonoBehaviour
     public Transform trashSpawner;
     public Transform playerTransform;
     public float spawnDelay;
+    [SerializeField]
+    private MapDataSO _mapDataSO;
+    public List<TrashCollision> trashList = new List<TrashCollision>();
+
+
 
     void Awake()
     {
@@ -34,9 +37,14 @@ public class TrashSpawner : MonoBehaviour
     }
     public void SpawnObject()
     {
-        GameObject obj = Instantiate(_trashObject,trashSpawner);
-        obj.transform.position = new Vector3(playerTransform.position.x,playerTransform.position.y + Random.Range(5f,7f));
+        GameObject obj = Instantiate(RandomObject(),trashSpawner);
+        obj.transform.position = new Vector3(Random.Range(_mapDataSO.minX,_mapDataSO.maxX)
+            ,playerTransform.position.y + Random.Range(7f,9f));
     }
-
+    public GameObject RandomObject()
+    {
+        int i = Random.Range(0,trashList.Count);
+        return trashList[i].gameObject;
+    }
 
 }

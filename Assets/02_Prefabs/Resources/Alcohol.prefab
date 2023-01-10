@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1999187384555262277}
   - component: {fileID: 1999187384555262278}
   m_Layer: 0
-  m_Name: Trash
+  m_Name: Alcohol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 68840328e6985e6488e36edad970a988, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb056e6fea65898428a8f2ab87445db3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0a475d9ef92014a954956dab7c551a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  trashSO: {fileID: 11400000, guid: 8e5df4aadf1635f4392a569b53f8ca8e, type: 2}
 --- !u!61 &1999187384555262278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.18, y: 0.21}
+    oldSize: {x: 1, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
