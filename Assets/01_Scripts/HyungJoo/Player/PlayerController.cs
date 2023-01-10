@@ -22,15 +22,14 @@ public class PlayerController : MonoBehaviour
     public bool isRightWall;
     private int _jumpCount;
     public UnityEvent Jumped;
-    
-    private void Start() 
+
+    public Vector2 moveVec;
+    private void Awake() 
     {
-        GameManager.Instance.PlayerDead -= DieProcess;
+        
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         _jumpCount = 1;
-        GameManager.Instance.PlayerDead += DieProcess;
-
     }
 
     private void Update()
@@ -44,7 +43,7 @@ public class PlayerController : MonoBehaviour
     private void Movement()
     {
         float x = Input.GetAxisRaw("Horizontal");
-        Vector2 moveVec = new Vector2(x *_xSpeed ,rigid.velocity.y);
+         moveVec = new Vector2(x *_xSpeed ,rigid.velocity.y);
         rigid.velocity = moveVec;
         
     }
@@ -63,7 +62,6 @@ public class PlayerController : MonoBehaviour
     }
     public void WallJump(Vector2 dir)
     {
-        GameManager.Instance.canSpawn = true;
         if(MinusJumpCount(-1))
         {
             anim.SetBool("Pwall",false);
@@ -80,11 +78,5 @@ public class PlayerController : MonoBehaviour
         
         
         Debug.Log("Jump");
-    }
-
-    public void DieProcess()
-    {
-        GameManager.Instance.canSpawn = false;
-        gameObject.SetActive(false);
     }
 }
