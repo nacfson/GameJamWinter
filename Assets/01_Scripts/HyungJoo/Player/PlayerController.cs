@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Pwall", false);
             anim.SetTrigger("Sjump");
-            
+                
             effectManager.InstantiateJumpEffect();
 
         }
