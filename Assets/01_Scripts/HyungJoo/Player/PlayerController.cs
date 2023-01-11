@@ -98,12 +98,25 @@ public class PlayerController : MonoBehaviour
     {
         if(MinusJumpCount(-1))
         {
+            if(JumpCount == 0)
+            {
+            anim.SetBool("Pwall",false);
+            anim.SetTrigger("Fjump");
+            rigid.velocity = new Vector2(0,0);
+            rigid.AddForce(dir * _jumpPower * 200 * 1.3f);
+            Jumped?.Invoke();
+            jumpSound?.Play();
+            }
+            else
+            {
             anim.SetBool("Pwall",false);
             anim.SetTrigger("Fjump");
             rigid.velocity = new Vector2(0,0);
             rigid.AddForce(dir * _jumpPower * 200);
             Jumped?.Invoke();
             jumpSound?.Play();
+            }
+
         }
         if(JumpCount == 0)
         {

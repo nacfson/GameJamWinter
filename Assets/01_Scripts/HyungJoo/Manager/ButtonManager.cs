@@ -11,7 +11,7 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private GameObject _tapPanel;
     public float xPower = 0.7f;
-    public float yPower = 2.0f;
+    public float yPower = 3.0f;
 
     public GameObject startZone;
 
