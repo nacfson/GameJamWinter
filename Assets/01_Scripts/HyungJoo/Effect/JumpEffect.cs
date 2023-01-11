@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class JumpEffect : MonoBehaviour
 {
+
     public void Destruction()
     {
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
 }
