@@ -27,7 +27,7 @@ public class ItemSpawner : MonoBehaviour
             {
                 Debug.Log("Spawn");
                 SpawnObject();
-                yield return new WaitForSeconds(10.0f);
+                yield return new WaitForSeconds(spawnDelay);
             }
             yield return null;
         }

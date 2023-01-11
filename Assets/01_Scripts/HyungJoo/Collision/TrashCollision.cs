@@ -29,7 +29,8 @@ public class TrashCollision : MonoBehaviour
         {
             if(PlayerController.onShield)
             {
-                PlayerController.onShield = false;
+                PlayerController.UnDoShield();
+
                 Destroy(gameObject);
                 return;
             }

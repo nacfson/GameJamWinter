@@ -1318,7 +1318,7 @@ MonoBehaviour:
   _shieldItem: {fileID: 606486916087751993, guid: 362f61de99100314c85b750ff3f08736, type: 3}
   itemSpawner: {fileID: 436417271}
   playerTransform: {fileID: 0}
-  spawnDelay: 0
+  spawnDelay: 15
   _mapDataSO: {fileID: 11400000, guid: 79c3266ef97c7774ca694f8fb81e0fbd, type: 2}
 --- !u!1 &627246585
 GameObject:
@@ -1812,7 +1812,6 @@ MonoBehaviour:
   canSave: 0
   moveVec: {x: 0, y: 0}
   effectManager: {fileID: 0}
-  onShield: 0
 --- !u!50 &951380232
 Rigidbody2D:
   serializedVersion: 4
