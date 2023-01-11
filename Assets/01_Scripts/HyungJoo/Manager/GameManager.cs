@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    public static void PlayPlayerDead()
+    public void PlayPlayerDead()
     {
         Debug.Log("PlayerDead");
         Handheld.Vibrate();

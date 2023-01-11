@@ -15,6 +15,10 @@ public class Background : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(!GameManager.canMove)
+        {
+            return;
+        }
         if (!collision.CompareTag("Area"))
             return;
         Vector2 playerPos = player.transform.position;

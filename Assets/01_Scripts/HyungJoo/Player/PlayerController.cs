@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerDead = null;
         GameManager.Instance.PlayerDead -= () => DieProcess();
         GameManager.Instance.PlayerDead += () => DieProcess();
-        GameManager.Instance.PlayerDead += GameManager.Instance.PlayerDeadPlayer;
     }
 
     private void Update()
@@ -90,14 +89,17 @@ public class PlayerController : MonoBehaviour
     public void DieProcess()
     {
         GameManager.Instance.PlayerDead -= DieProcess;
+        rigid.gravityScale = 0f;
+        rigid.velocity = Vector3.zero;
         Debug.Log("DieProcess");
         anim = GetComponent<Animator>();
         anim.SetTrigger("Die");
+        GameManager.Instance.PlayPlayerDead();
     }
 
     public void Destruction()
     {
         GameManager.Instance.PlayerAnimationEnd?.Invoke();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
