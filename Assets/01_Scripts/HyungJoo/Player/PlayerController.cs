@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
     public bool isRightWall;
     private int _jumpCount;
     public UnityEvent Jumped;
+    public  AudioSource jumpSound;
+    public AudioSource deadSound;
 
     public Vector2 moveVec;
     private void Awake() 
@@ -36,7 +39,6 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerDead = null;
         GameManager.Instance.PlayerDead -= () => DieProcess();
         GameManager.Instance.PlayerDead += () => DieProcess();
-        GameManager.Instance.PlayerDead += GameManager.Instance.PlayerDeadPlayer;
     }
 
     private void Update()
@@ -76,6 +78,7 @@ public class PlayerController : MonoBehaviour
             rigid.velocity = new Vector2(0,0);
             rigid.AddForce(dir * _jumpPower * 200);
             Jumped?.Invoke();
+            jumpSound?.Play();
         }
         if(JumpCount == 0)
         {
@@ -90,14 +93,18 @@ public class PlayerController : MonoBehaviour
     public void DieProcess()
     {
         GameManager.Instance.PlayerDead -= DieProcess;
+        rigid.gravityScale = 0f;
+        rigid.velocity = Vector3.zero;
         Debug.Log("DieProcess");
         anim = GetComponent<Animator>();
         anim.SetTrigger("Die");
+        deadSound?.Play();
+        GameManager.Instance.PlayPlayerDead();
     }
 
     public void Destruction()
     {
         GameManager.Instance.PlayerAnimationEnd?.Invoke();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

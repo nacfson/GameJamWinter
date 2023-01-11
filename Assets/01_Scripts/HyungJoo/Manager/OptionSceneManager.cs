@@ -59,7 +59,7 @@ public class OptionSceneManager : MonoBehaviour
 
     public void OnMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.GoToMainMenu();
         GameManager.Instance.GameStart?.Invoke();
 
     }

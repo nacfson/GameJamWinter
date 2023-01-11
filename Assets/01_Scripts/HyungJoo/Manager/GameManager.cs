@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public ScoreManager _scoreManager;
 
     public PlayerScore _playerScore;
+    public AudioSource ingameAudio;
     public PlayerScore playerScore
     {
         get
@@ -45,10 +46,16 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         canMove = false;
+        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
+
     }
 
-
-    public static void PlayPlayerDead()
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+        ingameAudio.Stop();
+    }
+    public void PlayPlayerDead()
     {
         Debug.Log("PlayerDead");
         Handheld.Vibrate();
@@ -59,10 +66,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("PlayScene");
         OnLoadUIScenes();
+        ingameAudio.Play();
     }
     public void OnLoadUIScenes()
     {
-        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
         SceneManager.LoadScene("Score",LoadSceneMode.Additive);
     }
 

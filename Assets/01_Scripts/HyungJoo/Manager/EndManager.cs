@@ -26,14 +26,14 @@ public class EndManager : MonoBehaviour
     {
         GameManager.Instance.PlayerDead -= PanelDown;
         _endPanel = this.gameObject;
-        _endPanel.transform.DOLocalMoveY(-1f,0.4f).SetEase(Ease.Linear);
+        _endPanel.transform.DOLocalMoveY(-1f,0.8f).SetEase(Ease.Linear);
         _currentScore.text = $"{ScoreManager.score}M";
         _bestScore.text = $"BEST : {PlayerPrefs.GetInt("BESTSCORE")}M";
 
     }
     public void OnMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        GameManager.Instance.GoToMainMenu();
         GameManager.Instance.GameStart?.Invoke();
     }
     public void Restart()

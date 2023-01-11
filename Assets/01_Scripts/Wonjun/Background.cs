@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Background : MonoBehaviour
 {
@@ -11,11 +10,16 @@ public class Background : MonoBehaviour
     public float warningBox = 0;
     private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        player = GameObject.Find("Player").GetComponent<PlayerController>();
+
+        if(!GameManager.canMove)
+        {
+            return;
+        }
         if (!collision.CompareTag("Area"))
             return;
         Vector2 playerPos = player.transform.position;
