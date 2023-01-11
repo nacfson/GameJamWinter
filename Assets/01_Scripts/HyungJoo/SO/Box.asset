@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba9f44cdcb2b574c8a1b2e06fdf2e97, type: 3}
   m_Name: Box
   m_EditorClassIdentifier: 
-  fallSpeed: 10
+  fallSpeed: 5
   rotationSpeed: 0.2

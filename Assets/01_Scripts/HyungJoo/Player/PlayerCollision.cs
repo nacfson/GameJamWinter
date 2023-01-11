@@ -16,7 +16,8 @@ public class PlayerCollision : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         buttonManager = FindObjectOfType<ButtonManager>();
     }
-    private void OnCollisionStay2D(Collision2D other) {
+    private void OnCollisionStay2D(Collision2D other) 
+    {
         if(other.gameObject.CompareTag("LeftWall"))
         {
             sp.flipX = false;
@@ -42,34 +43,31 @@ public class PlayerCollision : MonoBehaviour
     }
 
     
-    private void OnCollisionEnter2D(Collision2D other) {
-                if(other.gameObject.CompareTag("LeftWall")){
-                    Debug.Log("LeftWall");
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.CompareTag("LeftWall"))
+        {
             playerController.rigid.velocity = Vector3.zero;
         }
-        if(other.gameObject.CompareTag("RightWall")){
-
-                    Debug.Log("LeftWall");
-
+        if(other.gameObject.CompareTag("RightWall"))
+        {
             playerController.rigid.velocity = Vector3.zero;
-
         }
     }
     
-    private void OnCollisionExit2D(Collision2D other) {
+    private void OnCollisionExit2D(Collision2D other) 
+    {
         if(other.gameObject.CompareTag("LeftWall"))
         {
             playerController.isWall = false;
             playerController.rigid.gravityScale = 1f;
             playerController.JumpCount--;
-
         }
         if(other.gameObject.CompareTag("RightWall"))
         {
             playerController.isWall = false;
             playerController.rigid.gravityScale = 1f;
             playerController.JumpCount--;
-
         }
     }
 }

@@ -42,7 +42,7 @@ public class TrashSpawner : MonoBehaviour
         }
         GameObject obj = Instantiate(RandomObject(),trashSpawner);
         obj.transform.position = new Vector3(Random.Range(_mapDataSO.minX,_mapDataSO.maxX)
-            ,playerTransform.position.y + Random.Range(7f,9f));
+            ,playerTransform.position.y + Random.Range(10f,13f));
     }
     public GameObject RandomObject()
     {

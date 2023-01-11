@@ -55,11 +55,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 200000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1ea3f0582b885094d9bcf398399f6566, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -99,6 +99,7 @@ MonoBehaviour:
         m_CallState: 2
   jumpSound: {fileID: 5823861206602275786}
   deadSound: {fileID: 7938713610577179214}
+  canSave: 0
   moveVec: {x: 0, y: 0}
 --- !u!114 &3438473033345237529
 MonoBehaviour:
