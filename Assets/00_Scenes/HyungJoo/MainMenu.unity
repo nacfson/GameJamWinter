@@ -1904,7 +1904,7 @@ MonoBehaviour:
   _leftButton: {fileID: 1537433433}
   _rightButton: {fileID: 536894959}
   _applyImage: {fileID: 872562192}
-  _targetScore: 71
+  _targetScore: 100
   _selectButtonText: {fileID: 1817981870}
   godeongu: {fileID: 283199766}
   onExitPanel: 0
