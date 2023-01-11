@@ -25,7 +25,7 @@ public class PlayerCollision : MonoBehaviour
             playerController.JumpCount  = 2;
             playerController.isLeftWall = true;
             playerController.rigid.gravityScale = 0f;
-            buttonManager.xPower = 0.4f;
+            buttonManager.xPower = 0.7f;
         }
         if(other.gameObject.CompareTag("RightWall"))
         {
@@ -36,7 +36,7 @@ public class PlayerCollision : MonoBehaviour
             playerController.isRightWall = true;
             playerController.rigid.gravityScale = 0f;
 
-            buttonManager.xPower = -0.4f;
+            buttonManager.xPower = -0.7f;
         }
         
     }

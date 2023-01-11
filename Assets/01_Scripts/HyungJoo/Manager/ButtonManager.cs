@@ -10,7 +10,7 @@ public class ButtonManager : MonoBehaviour
     public DeadZoneCollision deadZoneCollision;
     [SerializeField]
     private GameObject _tapPanel;
-    public float xPower = 0.4f;
+    public float xPower = 0.7f;
     public float yPower = 2.0f;
 
     public GameObject startZone;
