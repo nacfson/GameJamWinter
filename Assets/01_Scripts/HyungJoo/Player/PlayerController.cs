@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private int _jumpCount;
     public UnityEvent Jumped;
     public  AudioSource jumpSound;
+    public AudioSource deadSound;
 
     public Vector2 moveVec;
     private void Awake() 
@@ -97,6 +98,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("DieProcess");
         anim = GetComponent<Animator>();
         anim.SetTrigger("Die");
+        deadSound?.Play();
         GameManager.Instance.PlayPlayerDead();
     }
 
