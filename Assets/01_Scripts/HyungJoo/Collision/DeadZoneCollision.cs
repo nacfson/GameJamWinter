@@ -12,7 +12,13 @@ public class DeadZoneCollision : MonoBehaviour
     private void FixedUpdate() {
         if(GameManager.canMove)
         {
-            transform.position += Vector3.up * upSpeed * 0.08f;
+            
+            float speed = 1;
+            if(ScoreManager.score < 100)
+            {
+                speed = 1 + ScoreManager.score * 0.01f;
+            }
+            transform.position += Vector3.up * upSpeed * 0.5f * speed;
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
