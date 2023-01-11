@@ -7,6 +7,7 @@ public class Background : MonoBehaviour
 {
     public PlayerController player;
     public float Rwall;
+    public float warningBox = 0;
     private void Start()
     {
     }
@@ -24,6 +25,7 @@ public class Background : MonoBehaviour
         Vector2 playerPos = player.transform.position;
         Vector2 myPos = transform.position;
         Debug.Log(Rwall);
+        warningBox += 1;
         Rwall+= 2;
         float diffx = Mathf.Abs(playerPos.x - myPos.x);
         float diffy = Mathf.Abs(playerPos.y - myPos.y);
