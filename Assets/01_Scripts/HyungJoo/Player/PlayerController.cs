@@ -52,27 +52,27 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Pwall", false);
         }
-        Vector3 originPos = Vector3.zero;
-        Vector3 calculatePos = Vector3.zero;
-        Debug.Log(transform.position.y);
-        if(GameManager.Instance.VCam.m_Follow == null && transform.position.y - originPos.y > 5f){
-            Debug.Log("asd");
-            GameManager.Instance.VCam.m_Follow = transform;
-            calculatePos = transform.position;
-            if(canSave)
-            {
-                originPos = transform.position;
+        // Vector3 originPos = Vector3.zero;
+        // Vector3 calculatePos = Vector3.zero;
+        // Debug.Log(transform.position.y);
+        // if(GameManager.Instance.VCam.m_Follow == null && transform.position.y - originPos.y > 5f){
+        //     Debug.Log("asd");
+        //     GameManager.Instance.VCam.m_Follow = transform;
+        //     calculatePos = transform.position;
+        //     if(canSave)
+        //     {
+        //         originPos = transform.position;
             
-            }
-            canSave = false;
+        //     }
+        //     canSave = false;
 
-            Debug.Log(originPos + "DDDD");
-        }
-        else if(calculatePos.y - originPos.y > 5f)
-        {
-            canSave = true;
-            GameManager.Instance.VCam.m_Follow = null;
-        }
+        //     Debug.Log(originPos + "DDDD");
+        // }
+        // else if(calculatePos.y - originPos.y > 5f)
+        // {
+        //     canSave = true;
+        //     GameManager.Instance.VCam.m_Follow = null;
+        // }
     }
     private void Movement()
     {
