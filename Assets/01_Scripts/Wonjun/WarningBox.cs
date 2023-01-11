@@ -30,9 +30,9 @@ public class WarningBox : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.collider.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.PlayerDead?.Invoke();
             Destruction();

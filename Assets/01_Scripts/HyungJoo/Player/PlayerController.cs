@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public bool canSave;
     public Vector2 moveVec;
     public EffectManager effectManager;
+    public Action shieldAction;
+    public static bool onShield;
 
    
     private void Awake() 
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         effectManager = FindObjectOfType<EffectManager>();
         _jumpCount = 1;
-        
+        shieldAction+= DoShield;
 
     }
     private void Start() {
@@ -81,7 +83,6 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
          moveVec = new Vector2(x *_xSpeed ,rigid.velocity.y);
         rigid.velocity = moveVec;
-        
     }
     public bool MinusJumpCount(int plus)
     {
@@ -117,7 +118,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Pwall", false);
             anim.SetTrigger("Sjump");
-                
+
             effectManager.InstantiateJumpEffect();
 
         }
@@ -128,6 +129,7 @@ public class PlayerController : MonoBehaviour
 
     public void DieProcess()
     {
+
         GameManager.Instance.PlayerDead -= DieProcess;
         rigid.gravityScale = 0f;
         rigid.velocity = Vector3.zero;
@@ -142,5 +144,9 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.PlayerAnimationEnd?.Invoke();
         //gameObject.SetActive(false);
+    }
+    public void DoShield()
+    {
+        onShield = true;
     }
 }

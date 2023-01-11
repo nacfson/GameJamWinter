@@ -24,11 +24,16 @@ public class TrashCollision : MonoBehaviour
         }
 
     }
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.collider.CompareTag("Player"))
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.CompareTag("Player"))
         {
+            if(PlayerController.onShield)
+            {
+                PlayerController.onShield = false;
+                Destroy(gameObject);
+                return;
+            }
             GameManager.Instance.PlayerDead?.Invoke();
-            Destroy(gameObject);
             Debug.Log("TRASH");
         }
     }
