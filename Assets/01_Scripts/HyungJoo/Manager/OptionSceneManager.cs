@@ -71,6 +71,6 @@ public class OptionSceneManager : MonoBehaviour
 
     public void OnSns()
     {
-        Application.OpenURL("https://github.com/nacfson/GameJamWinter");
+        Application.OpenURL("https://www.instagram.com/hyung_ju1030/");
     }
 }

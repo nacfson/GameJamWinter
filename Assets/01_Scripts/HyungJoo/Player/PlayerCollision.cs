@@ -48,10 +48,14 @@ public class PlayerCollision : MonoBehaviour
         if(other.gameObject.CompareTag("LeftWall"))
         {
             playerController.rigid.velocity = Vector3.zero;
+            playerController.rigid.gravityScale = 0f;
+
         }
         if(other.gameObject.CompareTag("RightWall"))
         {
             playerController.rigid.velocity = Vector3.zero;
+            playerController.rigid.gravityScale = 0f;
+
         }
     }
     
