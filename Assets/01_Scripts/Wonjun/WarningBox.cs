@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class WarningBox : MonoBehaviour
+{
+    [SerializeField]
+    public TrashSO trashSO;
+    public Background background;
+    //public float RanWall = Random.Range(3f, 10f);
+    // Start is called before the first frame update
+    void Start()
+    {
+        Invoke("Destruction",10f);
+        background = GameObject.Find("ColliderParent (2)").GetComponent<Background>();
+    }
+
+    // Update is called once per frame
+    private void FixedUpdate()
+    {
+        if (GameManager.canMove)
+        {
+            transform.position -= new Vector3(0, trashSO.fallSpeed * 0.05f);
+            transform.Rotate(new Vector3(0, 0, trashSO.rotationSpeed * 10f));
+        }
+
+    }
+    public void Destruction()
+    {
+        Destroy(gameObject);
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            GameManager.Instance.PlayerDead?.Invoke();
+            Destruction();
+        }
+    }
+}
