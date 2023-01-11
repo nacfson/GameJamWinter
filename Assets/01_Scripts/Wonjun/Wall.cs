@@ -28,7 +28,7 @@ public class Wall : MonoBehaviour
         {
             subWall.SetActive(false);
         }
-        else if(background.Rwall >= 8)
+        else if(background.Rwall >= 5)
         {
             background.Rwall = 0;
         }

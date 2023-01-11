@@ -123,4 +123,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trashSO: {fileID: 11400000, guid: 1096836cf275c6647943f8f5fde711ab, type: 2}
-  background: {fileID: 0}

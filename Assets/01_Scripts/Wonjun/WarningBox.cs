@@ -6,13 +6,13 @@ public class WarningBox : MonoBehaviour
 {
     [SerializeField]
     public TrashSO trashSO;
-    public Background background;
+    
     //public float RanWall = Random.Range(3f, 10f);
     // Start is called before the first frame update
     void Start()
     {
         Invoke("Destruction",10f);
-        background = GameObject.Find("ColliderParent (2)").GetComponent<Background>();
+        
     }
 
     // Update is called once per frame
