@@ -16,10 +16,6 @@ public class PlayerCollision : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         buttonManager = FindObjectOfType<ButtonManager>();
     }
-    void Update()
-    {
-        Debug.Log(playerController.rigid.gravityScale + "DD");
-    }
     private void OnCollisionStay2D(Collision2D other) {
         if(other.gameObject.CompareTag("LeftWall"))
         {

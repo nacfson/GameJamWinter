@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool isRightWall;
     private int _jumpCount;
     public UnityEvent Jumped;
+    public  AudioSource jumpSound;
 
     public Vector2 moveVec;
     private void Awake() 
@@ -75,6 +77,7 @@ public class PlayerController : MonoBehaviour
             rigid.velocity = new Vector2(0,0);
             rigid.AddForce(dir * _jumpPower * 200);
             Jumped?.Invoke();
+            jumpSound?.Play();
         }
         if(JumpCount == 0)
         {
