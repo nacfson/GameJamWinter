@@ -19,6 +19,10 @@ public class MainMenuManager : MonoBehaviour
     private Button _rightButton;
     [SerializeField]
     private Image _applyImage;
+    [SerializeField]
+    private int _targetScore;
+    [SerializeField]
+    private TextMeshProUGUI _selectButtonText;
     public GameObject godeongu;
 
     public bool onExitPanel;
@@ -37,6 +41,7 @@ public class MainMenuManager : MonoBehaviour
         onStorePanel = false;
         godeongu.SetActive(true);
         UpdateUI();
+        
 
     }
     void Update()
@@ -125,15 +130,31 @@ public class MainMenuManager : MonoBehaviour
     {
         Debug.Log(listCount);
         _applyImage.sprite = catImageList[listCount].sprite;
-
-        switch(listCount)
+        _selectButtonText.text = "SELECT";
+       switch(listCount)
         {
             case 0:
+                    _selectButton.interactable= true;
+        _selectButtonText.text = "SELECT";
+
                 _leftButton.interactable = false;
                 _rightButton.interactable = true;
 
                 break;
             case 1:
+                if(PlayerPrefs.GetInt("BESTSCORE") >= _targetScore)
+                {
+                    _selectButton.interactable = true;
+        _selectButtonText.text = "SELECT";
+
+                }
+                else
+                {
+                    _selectButton.interactable= false;
+
+                 _selectButtonText.text = $"{PlayerPrefs.GetInt("BESTSCORE")}/ {_targetScore}";
+
+                }
                 _rightButton.interactable = false;
                 _leftButton.interactable = true;
                 break;
