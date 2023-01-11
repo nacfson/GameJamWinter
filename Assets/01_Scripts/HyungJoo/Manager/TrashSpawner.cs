@@ -17,7 +17,6 @@ public class TrashSpawner : MonoBehaviour
     void Awake()
     {
         trashSpawner = this.transform;
-        playerTransform = FindObjectOfType<PlayerController>().transform;
         GameManager.canSpawn = false;
         StartCoroutine(SpawnTrashCor());
     }
@@ -37,6 +36,10 @@ public class TrashSpawner : MonoBehaviour
     }
     public void SpawnObject()
     {
+        if(playerTransform == null)
+        {
+            playerTransform = FindObjectOfType<PlayerController>().transform;
+        }
         GameObject obj = Instantiate(RandomObject(),trashSpawner);
         obj.transform.position = new Vector3(Random.Range(_mapDataSO.minX,_mapDataSO.maxX)
             ,playerTransform.position.y + Random.Range(7f,9f));

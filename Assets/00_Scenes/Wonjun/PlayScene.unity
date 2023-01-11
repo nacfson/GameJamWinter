@@ -1020,6 +1020,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 366814285626828719, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711851053070481234, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711851053070481234, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711851053070481234, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711851053070481325, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.13
+      objectReference: {fileID: 0}
     - target: {fileID: 8711851054636841804, guid: 9552dcc0eebc6e746b30fdad713ef008, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -2826,6 +2846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreManager: {fileID: 0}
   _playerScore: {fileID: 0}
+  ingameAudio: {fileID: 0}
 --- !u!4 &1720781278
 Transform:
   m_ObjectHideFlags: 0

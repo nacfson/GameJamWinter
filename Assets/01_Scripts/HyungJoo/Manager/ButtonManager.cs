@@ -18,7 +18,6 @@ public class ButtonManager : MonoBehaviour
     private void Awake() 
     {
         deadZoneCollision = FindObjectOfType<DeadZoneCollision>();
-        playerController = FindObjectOfType<PlayerController>();
         startZone = FindObjectOfType<StartZoneCollision>().gameObject;
         xPower = 0.4f;
         _tapPanel.SetActive(true);
@@ -27,6 +26,8 @@ public class ButtonManager : MonoBehaviour
 
     public void OnButton()
     {
+        playerController ??= FindObjectOfType<PlayerController>();
+
             GameManager.canMove = true;
             GameManager.canSpawn = true;
 
