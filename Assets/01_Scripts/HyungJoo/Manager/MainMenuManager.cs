@@ -97,7 +97,7 @@ public class MainMenuManager : MonoBehaviour
         {
             _storePanel.SetActive(true);
             onStorePanel = true;
-            _bestScoreText.text = $"BEST SCORE\n{PlayerPrefs.GetInt("BESTSCORE")}M";
+            _bestScoreText.text = $"BEST\n{PlayerPrefs.GetInt("BESTSCORE")}M";
             godeongu.SetActive(false);
 
         }
@@ -125,6 +125,7 @@ public class MainMenuManager : MonoBehaviour
     public void OnSelectButton()
     {
         applyCount = listCount;
+        PlayerPrefs.SetInt("APPLYCOUNT",applyCount);
     }
     public void UpdateUI()
     {

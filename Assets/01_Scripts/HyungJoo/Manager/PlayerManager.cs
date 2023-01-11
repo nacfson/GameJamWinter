@@ -9,14 +9,13 @@ public class PlayerManager : MonoBehaviour
     public List<Animator> animatorList = new List<Animator>();
     private void Start() {
         player = FindObjectOfType<PlayerController>().gameObject;
-        switch(MainMenuManager.applyCount)
+        switch(PlayerPrefs.GetInt("APPLYCOUNT"))
         {
             case 0:
                 player.GetComponent<Animator>().runtimeAnimatorController = animatorList[0].runtimeAnimatorController;
                 break;  
             case 1:
                 player.GetComponent<Animator>().runtimeAnimatorController = animatorList[1].runtimeAnimatorController;
-
                 break;
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance = null;
@@ -18,6 +19,16 @@ public class GameManager : MonoBehaviour
 
     public PlayerScore _playerScore;
     public AudioSource ingameAudio;
+
+    private CinemachineVirtualCamera _vCam;
+    public CinemachineVirtualCamera VCam {
+        get {
+            if(_vCam == null) {
+                _vCam = GameObject.FindObjectOfType<CinemachineVirtualCamera>();
+            }
+            return _vCam;
+        }
+    }
     public PlayerScore playerScore
     {
         get

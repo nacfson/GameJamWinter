@@ -51,3 +51,4 @@ MonoBehaviour:
   trashList:
   - {fileID: 1999187384555262277, guid: 0ba214b13c6b5bc4cb885605c02e6395, type: 3}
   - {fileID: 1999187384555262277, guid: f61278840a55e8e4db2dab44fd8b4cd1, type: 3}
+  - {fileID: 525485168147208587, guid: 87e144d563584c0479aba7a3f00c28bb, type: 3}
