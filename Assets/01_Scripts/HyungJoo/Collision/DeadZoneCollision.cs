@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class DeadZoneCollision : MonoBehaviour
 {
-    public float upSpeed = 0.05f;
+    public float upSpeed = 0.07f;
     public bool canMove;
     void Awake()
     {
@@ -14,11 +14,11 @@ public class DeadZoneCollision : MonoBehaviour
         {
             
             float speed = 1;
-            if(ScoreManager.score < 100)
+            if(ScoreManager.score < 300)
             {
                 speed = 1 + ScoreManager.score * 0.01f;
             }
-            transform.position += Vector3.up * upSpeed * 0.5f * speed;
+            transform.position += Vector3.up * upSpeed  * 0.5f * speed;
         }
     }
     private void OnCollisionEnter2D(Collision2D other) {
