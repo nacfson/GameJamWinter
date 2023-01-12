@@ -30,7 +30,7 @@ public class TrashCollision : MonoBehaviour
             if(PlayerController.onShield)
             {
                 PlayerController.UnDoShield();
-
+                other.gameObject.transform.Find("BubbleSound").GetComponent<AudioSource>()?.Play();
                 Destroy(gameObject);
                 return;
             }

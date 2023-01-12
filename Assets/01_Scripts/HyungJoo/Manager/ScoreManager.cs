@@ -28,6 +28,11 @@ public class ScoreManager : MonoBehaviour
         {
             if(GameManager.Instance.playerScore != null)
                 score = GameManager.Instance.playerScore.CheckHeight();
+
+            if(!GameManager.canMove)
+            {
+                yield return null;
+            }
             _currentText.text = $"{score}M";
             _bestText.text = $"BEST {PlayerPrefs.GetInt("BESTSCORE")}M";
             SetScore();
