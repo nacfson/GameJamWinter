@@ -34,6 +34,13 @@ public class WarningBox : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if(PlayerController.onShield)
+            {
+                PlayerController.UnDoShield();
+                other.gameObject.transform.Find("BubbleSound").GetComponent<AudioSource>()?.Play();
+                Destroy(gameObject);
+                return;
+            }
             GameManager.Instance.PlayerDead?.Invoke();
             Destruction();
         }

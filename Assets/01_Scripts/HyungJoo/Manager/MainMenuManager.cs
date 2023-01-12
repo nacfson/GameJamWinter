@@ -39,7 +39,6 @@ public class MainMenuManager : MonoBehaviour
         onExitPanel = false;
         _storePanel.SetActive(false);
         onStorePanel = false;
-        godeongu.SetActive(true);
         UpdateUI();
         
 
