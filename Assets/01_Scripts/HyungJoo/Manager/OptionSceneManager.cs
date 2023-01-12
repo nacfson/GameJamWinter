@@ -27,16 +27,20 @@ public class OptionSceneManager : MonoBehaviour
     public void ControlVolume()
     {
         float sound = audioSlider.value;
+        Debug.Log("Sound");
         if(sound == -40f) 
         {
-            audioMixer.SetFloat("Master",-80f);
+        Debug.Log("SoundInspector");
+
             _volumeButton.GetComponent<Image>().sprite = _muted;
+            audioMixer.SetFloat("Master",-80f);
             onMaxVolume = false;
         }
         else
         {
-            audioMixer.SetFloat("Master",sound);
             _volumeButton.GetComponent<Image>().sprite = _origin;
+            Debug.Log("ssssss");
+            audioMixer.SetFloat("Master",sound);
 
         }
             
@@ -58,14 +62,12 @@ public class OptionSceneManager : MonoBehaviour
             audioSlider.value = -40f;
             ControlVolume();
 
-
         }
         else
         {
             onMaxVolume = true;
             audioSlider.value = 0f;
             ControlVolume();
-
         }
     }
     void Update()

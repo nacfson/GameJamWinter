@@ -996,7 +996,7 @@ MonoBehaviour:
   audioSlider: {fileID: 152370075}
   onMainPanel: 0
   onMaxVolume: 0
-  _volumeButton: {fileID: 290954124}
+  _volumeButton: {fileID: 557258331}
   _origin: {fileID: 21300000, guid: d97bf72f675cfa24c92120ad2b4f4469, type: 3}
   _muted: {fileID: 21300000, guid: 48beb262c4702a94796197b139aa5034, type: 3}
 --- !u!1 &1623448434
