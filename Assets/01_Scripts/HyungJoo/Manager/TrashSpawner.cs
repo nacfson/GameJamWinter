@@ -24,10 +24,8 @@ public class TrashSpawner : MonoBehaviour
     {
         while(true)
         {
-            //Debug.Log(GameManager.Instance.canSpawn);
             if(GameManager.canSpawn)
             {
-                Debug.Log("Spawn");
                 SpawnObject();
                 yield return new WaitForSeconds(spawnDelay);
             }

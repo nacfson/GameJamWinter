@@ -36,7 +36,7 @@ public class TrashCollision : MonoBehaviour
                 return;
             }
             GameManager.Instance.PlayerDead?.Invoke();
-            Debug.Log("TRASH");
+
         }
     }
 }
