@@ -1837,6 +1837,7 @@ MonoBehaviour:
   isWall: 0
   isLeftWall: 0
   isRightWall: 0
+  animCount: 0
   Jumped:
     m_PersistentCalls:
       m_Calls:
@@ -20252,6 +20253,7 @@ MonoBehaviour:
   isWall: 0
   isLeftWall: 0
   isRightWall: 0
+  animCount: 0
   Jumped:
     m_PersistentCalls:
       m_Calls:

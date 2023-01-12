@@ -92,13 +92,10 @@ public class PlayerController : MonoBehaviour
         _jumpCount += plus;
         if(_jumpCount < 0)
         {
-
             return false;
-
         }
         else
         {
-
             return true;
         }
 
