@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         canMove = false;
-        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
 
     }
 
@@ -81,6 +80,8 @@ public class GameManager : MonoBehaviour
     }
     public void OnLoadUIScenes()
     {
+        SceneManager.LoadScene("OptionScene",LoadSceneMode.Additive);
+
         SceneManager.LoadScene("Score",LoadSceneMode.Additive);
     }
 
