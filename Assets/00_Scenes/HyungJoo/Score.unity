@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 714822551}
   - component: {fileID: 714822550}
   - component: {fileID: 714822552}
+  - component: {fileID: 714822553}
   m_Layer: 5
   m_Name: EndPanel
   m_TagString: Untagged
@@ -439,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1500}
+  m_AnchoredPosition: {x: 0, y: -2772}
   m_SizeDelta: {x: 1050.5, y: 1052.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &714822550
@@ -495,6 +496,30 @@ MonoBehaviour:
   _endPanel: {fileID: 0}
   _currentScore: {fileID: 0}
   _bestScore: {fileID: 0}
+  fadeTime: 1
+  canvasGroup: {fileID: 0}
+  rectTransform: {fileID: 0}
+  items:
+  - {fileID: 1785928268}
+  - {fileID: 1478501895}
+  - {fileID: 1199043033}
+  - {fileID: 1324398175}
+  - {fileID: 769219688}
+  - {fileID: 1188723202}
+  - {fileID: 664350022}
+  - {fileID: 1736728389}
+--- !u!225 &714822553
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714822548}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &769219688
 GameObject:
   m_ObjectHideFlags: 0

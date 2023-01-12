@@ -11,11 +11,51 @@ public class EndManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _currentScore;
     [SerializeField] private TextMeshProUGUI _bestScore;
 
-    
+    public float fadeTime = 1f;
+    public CanvasGroup canvasGroup;
+    public RectTransform rectTransform;
+    public List<GameObject> items = new List<GameObject>();
+
+    public void PanelFadeIn()
+    {
+        canvasGroup.alpha = 0f;
+        rectTransform.transform.localPosition = new Vector3(0f, -1000f, 0f);
+        rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime, false).SetEase(Ease.OutElastic);
+        canvasGroup.DOFade(1, fadeTime);
+        StartCoroutine("ItemsAnimation");
+    }
+
+    IEnumerator PanelFadeOut()
+    {
+        canvasGroup.alpha = 1f;
+        rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
+        rectTransform.DOAnchorPos(new Vector2(0f, -2000f), fadeTime, false).SetEase(Ease.InOutQuint);
+        canvasGroup.DOFade(1, fadeTime);
+        yield return new WaitForSeconds(1f);
+        GameManager.Instance.LoadPlayScene();
+        GameManager.Instance.GameStart?.Invoke();
+
+        yield return null;
+    }
+
+    IEnumerator ItemsAnimation()
+    {
+        foreach (var item in items)
+        {
+            item.transform.localScale = Vector3.zero;
+        }
+        foreach (var item in items)
+        {
+            item.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
     private void Awake() {
         _destination = GameObject.Find("Destination");
         _currentScore = transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
         _bestScore = transform.Find("BestScore").GetComponent<TextMeshProUGUI>();
+        canvasGroup = GetComponent<CanvasGroup>();
+        rectTransform = GetComponent<RectTransform>();
 
     }
     void Start()
@@ -25,21 +65,23 @@ public class EndManager : MonoBehaviour
     public void PanelDown()
     {
         GameManager.Instance.PlayerDead -= PanelDown;
-        _endPanel = this.gameObject;
-        _endPanel.transform.DOLocalMoveY(-1f,0.8f).SetEase(Ease.Linear);
+        // _endPanel = this.gameObject;
+        // _endPanel.transform.DOLocalMoveY(-1f,0.8f).SetEase(Ease.Linear);
+        PanelFadeIn();
         _currentScore.text = $"{ScoreManager.score}M";
         _bestScore.text = $"BEST : {PlayerPrefs.GetInt("BESTSCORE")}M";
 
     }
     public void OnMainMenu()
     {
-        GameManager.Instance.GoToMainMenu();
+                GameManager.Instance.GoToMainMenu();
         GameManager.Instance.GameStart?.Invoke();
+
     }
     public void Restart()
     {
-        GameManager.Instance.LoadPlayScene();
-        GameManager.Instance.GameStart?.Invoke();
+        StopCoroutine(PanelFadeOut());
+        StartCoroutine(PanelFadeOut());
     }
     public void Quit()
     {
