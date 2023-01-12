@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveVec;
     public EffectManager effectManager;
     public Action shieldAction;
-    public static GameObject shieldImage;
     public static bool onShield;
 
    
@@ -49,7 +48,6 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerDead -= () => DieProcess();
         GameManager.Instance.PlayerDead += () => DieProcess();
         canSave  = true;
-        shieldImage = transform.Find("ShieldSprite").gameObject;
     }
 
     private void Update()
@@ -124,15 +122,8 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PlayerAnimationEnd?.Invoke();
         //gameObject.SetActive(false);
     }
-    public static void DoShield()
+    public void DoShield()
     {
         onShield = true;
-        shieldImage.SetActive(true);
-    }
-    public static void UnDoShield()
-    {
-        onShield = false;
-        shieldImage.SetActive(false);
-
     }
 }

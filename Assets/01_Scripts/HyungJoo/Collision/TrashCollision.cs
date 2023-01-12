@@ -30,8 +30,12 @@ public class TrashCollision : MonoBehaviour
         {
             if(PlayerController.onShield)
             {
+<<<<<<< HEAD
                 PlayerController.UnDoShield();
                 bubbleSound?.Play();
+=======
+                PlayerController.onShield = false;
+>>>>>>> parent of f2b5589 (Ｂｕｂｂｌｅ)
                 Destroy(gameObject);
                 return;
             }
