@@ -129,7 +129,7 @@ public class MainMenuManager : MonoBehaviour
     }
     public void UpdateUI()
     {
-//        Debug.Log(listCount);
+        Debug.Log(listCount);
         _applyImage.sprite = catImageList[listCount].sprite;
         _selectButtonText.text = "SELECT";
        switch(listCount)

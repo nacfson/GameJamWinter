@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
 
     public void DieProcess()
     {
+
         GameManager.Instance.PlayerDead -= DieProcess;
         rigid.gravityScale = 0f;
         rigid.velocity = Vector3.zero;

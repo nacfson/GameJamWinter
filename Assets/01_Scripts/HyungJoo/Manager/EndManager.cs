@@ -14,7 +14,7 @@ public class EndManager : MonoBehaviour
     
     private void Awake() {
         _destination = GameObject.Find("Destination");
-        _currentScore = transform.Find("ScoreTextPanel").transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
+        _currentScore = transform.Find("CurrentScore").GetComponent<TextMeshProUGUI>();
         _bestScore = transform.Find("BestScore").GetComponent<TextMeshProUGUI>();
 
     }
