@@ -17,17 +17,56 @@ public class OptionSceneManager : MonoBehaviour
 
     public Slider audioSlider;
     public bool onMainPanel;
+    public bool onMaxVolume;
+    [SerializeField]
+    private Button _volumeButton;
+    [SerializeField]
+    private Sprite _origin;
+    [SerializeField]
+    private Sprite _muted;
     public void ControlVolume()
     {
         float sound = audioSlider.value;
-        if(sound == -40f) audioMixer.SetFloat("Master",-80f);
-        else audioMixer.SetFloat("Master",sound);
+        if(sound == -40f) 
+        {
+            audioMixer.SetFloat("Master",-80f);
+            _volumeButton.GetComponent<Image>().sprite = _muted;
+            onMaxVolume = false;
+        }
+        else
+        {
+            audioMixer.SetFloat("Master",sound);
+            _volumeButton.GetComponent<Image>().sprite = _origin;
+
+        }
+            
     }
     private void Awake() {
         onMainPanel =false;
         Time.timeScale = 1f;
         _mainPanel.SetActive(false);
         _optionButton.SetActive(true);
+        onMaxVolume = true;
+        audioMixer.SetFloat("Master",0f);
+        audioSlider.value = 0f;
+    }
+    public void OnVolumeMinMax()
+    {
+        if(onMaxVolume)
+        {
+            onMaxVolume = false;
+            audioSlider.value = -40f;
+            ControlVolume();
+
+
+        }
+        else
+        {
+            onMaxVolume = true;
+            audioSlider.value = 0f;
+            ControlVolume();
+
+        }
     }
     void Update()
     {
