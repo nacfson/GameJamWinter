@@ -34,7 +34,6 @@ public class EndManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameManager.Instance.LoadPlayScene();
         GameManager.Instance.GameStart?.Invoke();
-
         yield return null;
     }
     IEnumerator PanelFadeOutOnMainMenu()
@@ -46,7 +45,6 @@ public class EndManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameManager.Instance.GoToMainMenu();
         GameManager.Instance.GameStart?.Invoke();
-
         yield return null;
     }
 
@@ -59,7 +57,7 @@ public class EndManager : MonoBehaviour
         foreach (var item in items)
         {
             item.transform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
         }
     }
     private void Awake() {
