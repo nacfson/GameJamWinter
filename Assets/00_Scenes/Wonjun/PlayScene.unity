@@ -883,13 +883,13 @@ PrefabInstance:
       propertyPath: field of view
       value: 60
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3676685096218399836, guid: 54323c781f12b3b45b6f0bcd995009fd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.63
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3676685096218399833, guid: 54323c781f12b3b45b6f0bcd995009fd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54323c781f12b3b45b6f0bcd995009fd, type: 3}
---- !u!4 &333926080 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5761506700866548368, guid: 54323c781f12b3b45b6f0bcd995009fd, type: 3}
-  m_PrefabInstance: {fileID: 333926079}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &392730514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Priority: 14
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 333926080}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5

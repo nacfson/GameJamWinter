@@ -7,6 +7,7 @@ public class TrashCollision : MonoBehaviour
 {
     [SerializeField]
     public TrashSO trashSO;
+    public AudioSource bubbleSound;
     void Awake()
     {
         Invoke("Destruction",10f);
@@ -30,7 +31,7 @@ public class TrashCollision : MonoBehaviour
             if(PlayerController.onShield)
             {
                 PlayerController.UnDoShield();
-
+                bubbleSound?.Play();
                 Destroy(gameObject);
                 return;
             }

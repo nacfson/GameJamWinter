@@ -11,6 +11,8 @@ public class ShieldItem : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if(other.gameObject.CompareTag("Player")){
             PlayerController.DoShield();
+            other.gameObject.transform.Find("BubbleSound").GetComponent<AudioSource>()?.Play();
+            Debug.Log("BubbleSound");
             Destroy(gameObject);
         }
     }
