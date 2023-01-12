@@ -37,6 +37,18 @@ public class EndManager : MonoBehaviour
 
         yield return null;
     }
+    IEnumerator PanelFadeOutOnMainMenu()
+    {
+        canvasGroup.alpha = 1f;
+        rectTransform.transform.localPosition = new Vector3(0f, 0f, 0f);
+        rectTransform.DOAnchorPos(new Vector2(0f, -2000f), fadeTime, false).SetEase(Ease.InOutQuint);
+        canvasGroup.DOFade(1, fadeTime);
+        yield return new WaitForSeconds(1f);
+        GameManager.Instance.GoToMainMenu();
+        GameManager.Instance.GameStart?.Invoke();
+
+        yield return null;
+    }
 
     IEnumerator ItemsAnimation()
     {
@@ -74,8 +86,9 @@ public class EndManager : MonoBehaviour
     }
     public void OnMainMenu()
     {
-                GameManager.Instance.GoToMainMenu();
-        GameManager.Instance.GameStart?.Invoke();
+        StopCoroutine(PanelFadeOutOnMainMenu());
+        StartCoroutine(PanelFadeOutOnMainMenu());
+
 
     }
     public void Restart()

@@ -77,10 +77,12 @@ public class MainMenuManager : MonoBehaviour
         {
             _exitPanel.SetActive(false);
             onExitPanel = false;
+            godeongu.SetActive(true);
         }
         else
         {
             _exitPanel.SetActive(true);
+            godeongu.SetActive(false);
             onExitPanel = true;
         }
     }
