@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool isLeftWall;
     public bool isRightWall;
     private int _jumpCount;
+    public int animCount;
     public UnityEvent Jumped;
     public  AudioSource jumpSound;
     public AudioSource deadSound;
@@ -101,6 +102,9 @@ public class PlayerController : MonoBehaviour
             return true;
         }
 
+        
+
+
     }
     public void WallJump(Vector2 dir)
     {
@@ -113,8 +117,6 @@ public class PlayerController : MonoBehaviour
             Jumped?.Invoke();
             jumpSound?.Play();
             effectManager.InstantiateJumpEffect();
-            
-
         }
         if(JumpCount == 0)
         {
@@ -124,6 +126,7 @@ public class PlayerController : MonoBehaviour
             effectManager.InstantiateJumpEffect();
 
         }
+        
         
         
         Debug.Log("Jump");
